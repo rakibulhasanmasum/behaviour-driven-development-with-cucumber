@@ -1,4 +1,4 @@
-package runners.trips.bidding;
+package com.alpine.runners.trips.bidding;
 
 public class BiddingTripCreateRunner {
 }
