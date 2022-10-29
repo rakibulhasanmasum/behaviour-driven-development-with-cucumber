@@ -1,4 +1,4 @@
-package com.alpine.playground;
+package playground;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

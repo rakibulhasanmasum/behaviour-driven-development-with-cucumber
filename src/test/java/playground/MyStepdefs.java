@@ -1,4 +1,4 @@
-package com.alpine.playground;
+package playground;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

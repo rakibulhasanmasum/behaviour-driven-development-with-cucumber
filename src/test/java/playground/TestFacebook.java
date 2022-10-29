@@ -1,4 +1,4 @@
-package com.alpine.playground;
+package playground;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

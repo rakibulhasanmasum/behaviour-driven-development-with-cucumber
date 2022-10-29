@@ -1,4 +1,4 @@
-package com.alpine.stepDefinitions.trips.bidding;
+package stepDefinitions.trips.bidding;
 
 import com.alpine.cucumber.TestContext;
 import io.cucumber.java.After;
