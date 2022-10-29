@@ -1,7 +1,9 @@
 package com.alpine.stepDefinitions.trips.bidding;
 
 import com.alpine.cucumber.TestContext;
+import com.alpine.managers.FileReaderManager;
 import com.alpine.pageObjects.trips.RequestsPage;
+import com.alpine.testDataTypes.Shipper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +22,10 @@ public class BiddingTripCreateSteps {
         requestsPage.navigateToRequestsPage();
     }
 
-    @Then("Admin user enters shipper id")
-    public void adminUserEntersShipperId() {
+    @Then("Admin user enters {string}")
+    public void adminUserEnters(String arg0) {
+        int shipperId = Integer.parseInt(arg0);
+        Shipper shipper = FileReaderManager.getInstance().getJsonReader().getShipperById(shipperId);
+        System.out.println(shipper.user_details_id);
     }
 }
