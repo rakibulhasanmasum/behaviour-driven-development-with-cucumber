@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class TestFacebook {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "bin/chromedriver_linux");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 

@@ -2,6 +2,7 @@ package com.alpine.managers;
 
 import com.alpine.enums.DriverType;
 import com.alpine.enums.EnvironmentType;
+import com.alpine.enums.OperatingSystemType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,11 +14,14 @@ public class WebDriverManager {
     private WebDriver driver;
     private static DriverType driverType;
     private static EnvironmentType environmentType;
+
+    private static OperatingSystemType operatingSystemType;
     private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
     public WebDriverManager() {
         driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
         environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
+        operatingSystemType = FileReaderManager.getInstance().getConfigReader().getOperatingSystemType();
     }
 
     public WebDriver getDriver() {
@@ -44,7 +48,7 @@ public class WebDriverManager {
             case FIREFOX : driver = new FirefoxDriver();
                 break;
             case CHROME :
-                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath());
+                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
                 driver = new ChromeDriver();
                 break;
             case INTERNETEXPLORER : driver = new InternetExplorerDriver();

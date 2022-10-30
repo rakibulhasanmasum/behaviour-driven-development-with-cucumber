@@ -2,6 +2,7 @@ package com.alpine.dataProviders;
 
 import com.alpine.enums.DriverType;
 import com.alpine.enums.EnvironmentType;
+import com.alpine.enums.OperatingSystemType;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -62,6 +63,14 @@ public class ConfigFileReader {
         if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
         else if(environmentName.equals("remote")) return EnvironmentType.REMOTE;
         else throw new RuntimeException("Environment Type Key value in Configuration.properties is not matched : " + environmentName);
+    }
+
+    public OperatingSystemType getOperatingSystemType() {
+        String operatingSystemName = properties.getProperty("operatingSystem");
+        if (operatingSystemName == null || operatingSystemName.equalsIgnoreCase("linux")) return OperatingSystemType.LINUX;
+        else if (operatingSystemName.equalsIgnoreCase("mac")) return OperatingSystemType.MAC;
+        else if (operatingSystemName.equalsIgnoreCase("windows")) return OperatingSystemType.WINDOWS;
+        else throw new RuntimeException("Operating system Type Key value in Configuration.properties is not matched : " + operatingSystemName);
     }
 
     public Boolean getBrowserWindowSize() {

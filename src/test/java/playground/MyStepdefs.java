@@ -15,7 +15,7 @@ public class MyStepdefs {
     private WebDriver driver;
     @Given("User is on google home page")
     public void userIsOnGoogleHomePage() {
-        System.setProperty("webdriver.chrome.driver", "src/main/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/bin/");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
