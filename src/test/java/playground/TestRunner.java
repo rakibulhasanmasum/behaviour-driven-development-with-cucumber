@@ -15,6 +15,6 @@ import org.junit.runner.RunWith;
 //public class TestRunner extends AbstractTestNGCucumberTests {
 public class TestRunner {
     public static void main(String[] args) {
-
+        System.out.println(System.getProperty("user.dir"));
     }
 }

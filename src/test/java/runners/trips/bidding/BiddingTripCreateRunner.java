@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = {"stepDefinitions.trips.bidding"},
+        glue = {"stepDefinitions.trips.bidding.create"},
         features = "src/test/resources/functionalTests/trips/bidding/BiddingTripCreate.feature",
         plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
                 "junit:target/cucumber-reports/Cucumber.xml",

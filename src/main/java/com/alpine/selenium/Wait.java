@@ -17,6 +17,7 @@ public class Wait {
         until(driver, (d) ->
         {
             Boolean isJqueryCallDone = (Boolean)((JavascriptExecutor) driver).executeScript("return jQuery.active===0");
+//            Boolean isJqueryCallDone = (Boolean)((JavascriptExecutor) driver).executeScript("return window.jQuery != undefined && jQuery.active === 0");
             if (!isJqueryCallDone) System.out.println("JQuery call is in Progress");
             return isJqueryCallDone;
         }, timeoutInSeconds);

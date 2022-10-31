@@ -5,9 +5,11 @@ import com.alpine.enums.EnvironmentType;
 import com.alpine.enums.OperatingSystemType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverManager {
@@ -49,7 +51,16 @@ public class WebDriverManager {
                 break;
             case CHROME :
                 System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
-                driver = new ChromeDriver();
+                String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
+                System.out.println(user_data_dir);
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments(user_data_dir);
+//                options.addArguments("--user-data-dir=/home/rakibul/Workstation/ruby-selenium-automation/user_data");
+//                options.addArguments("--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir");
+//                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+//                options.addArguments("--disable-extentions");
+//                options.addArguments("--profile-directory=Profile 1");
+                driver = new ChromeDriver(options);
                 break;
             case INTERNETEXPLORER : driver = new InternetExplorerDriver();
                 break;
