@@ -1,6 +1,7 @@
 package com.alpine.pageObjects.trips;
 
 import com.alpine.managers.FileReaderManager;
+import com.alpine.pageObjects.Page;
 import com.alpine.selenium.Wait;
 import com.alpine.testDataTypes.Shipper;
 import org.openqa.selenium.NoSuchElementException;
@@ -10,11 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import java.util.Objects;
-import java.util.Set;
-//import org.junit.Assert;
-
-public class RequestsPage {
+public class RequestsPage extends Page {
     private WebDriver driver;
 
     @FindBy(id = "create_new_trip")
@@ -26,9 +23,6 @@ public class RequestsPage {
     @FindBy(name = "search_shipper")
     private WebElement searchInputFieldForShipper;
 
-    @FindBy(id = "proceed")
-    private WebElement CreateNewTripProceedButton;
-
     @FindBy(className = "shipper_card")
     private WebElement shipperCard;
 
@@ -39,11 +33,13 @@ public class RequestsPage {
     private WebElement proceedButton;
 
     public RequestsPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        System.out.println("REQUEST PAGE");
     }
     public void navigateToRequestsPage() {
+        Wait.untilPageLoadComplete(driver);
+        Wait.untilJqueryIsDone(driver);
         driver.get(FileReaderManager.getInstance().getConfigReader().getRequestsUrl());
     }
 
@@ -75,16 +71,9 @@ public class RequestsPage {
     public void checkIfShipperInfoMatches(String shipperInfo) {
         String shipperId = shipperBodyId.getText().replace("#", "");
         Assert.assertEquals(shipperId, shipperInfo);
-//        WaitExplicit.wait(120000);
     }
 
     public void clickProceedButton() {
-        System.out.println(driver.getCurrentUrl());
-//        driver.navigate().refresh();
-        WaitExplicit.wait(3000);
-        Wait.untilJqueryIsDone(driver);
         proceedButton.click();
-        WaitExplicit.wait(300);
-//        WaitExplicit.wait(50000);
     }
 }

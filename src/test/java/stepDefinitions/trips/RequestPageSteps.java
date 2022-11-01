@@ -1,12 +1,16 @@
-package stepDefinitions.trips.bidding.create;
+package stepDefinitions.trips;
 
 import com.alpine.cucumber.TestContext;
+import com.alpine.helper.WindowHandler;
 import com.alpine.pageObjects.trips.RequestsPage;
 import com.alpine.pageObjects.trips.TripCreationPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.jetbrains.annotations.NotNull;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class RequestPageSteps {
     TestContext testContext;
@@ -32,7 +36,7 @@ public class RequestPageSteps {
         requestsPage.checkIfShipperSearchButtonExists();
     }
 
-    @Then("Enters Shipper ID {string}")
+    @When("Enters Shipper ID {string}")
     public void enters(String shipperId) {
         requestsPage.enterValuesInShipperSearchInputField(shipperId);
     }
@@ -47,13 +51,18 @@ public class RequestPageSteps {
         requestsPage.checkIfShipperCardAppears();
     }
 
-    @And("Admin user checks if the shipper id {string} is valid")
+    @And("he checks if the shipper id {string} is valid")
     public void adminUserChecksIfTheShipperIdIsValid(String shipperInfo) {
         requestsPage.checkIfShipperInfoMatches(shipperInfo);
     }
 
-    @Then("Clicks on the proceed button")
+    @When("he Clicks on the proceed button")
     public void clicksOnTheProceedButton() {
         requestsPage.clickProceedButton();
+    }
+
+    @Then("a new tab will open")
+    public void aNewTabWillOpen() {
+        requestsPage.handOverTheWindowHandler();
     }
 }
