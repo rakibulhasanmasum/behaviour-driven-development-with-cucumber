@@ -1,16 +1,11 @@
 package stepDefinitions.trips;
 
 import com.alpine.cucumber.TestContext;
-import com.alpine.helper.WindowHandler;
 import com.alpine.pageObjects.trips.RequestsPage;
-import com.alpine.pageObjects.trips.TripCreationPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.jetbrains.annotations.NotNull;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class RequestPageSteps {
     TestContext testContext;
