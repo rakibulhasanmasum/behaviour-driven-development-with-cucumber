@@ -238,5 +238,6 @@ public class TripInformationTab extends Page {
     public void clickPublishButton() {
         publishButton.click();
         Wait.untilJqueryIsDone(driver);
+        WaitExplicit.wait(3000);
     }
 }
