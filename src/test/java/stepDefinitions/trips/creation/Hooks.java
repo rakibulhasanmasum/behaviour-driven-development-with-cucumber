@@ -1,11 +1,12 @@
-package stepDefinitions.trips;
+package stepDefinitions.trips.creation;
 
 import com.alpine.cucumber.TestContext;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 
 public class Hooks {
-    TestContext testContext;
+    static TestContext testContext;
 
     public Hooks(TestContext context) {
         testContext = context;
@@ -17,6 +18,12 @@ public class Hooks {
 
     @After
     public void AfterSteps() {
+//        testContext.getWebDriverManager().closeDriver();
+    }
+
+    @AfterAll
+    public static void before_or_after_all() {
+//        System.out.println("F IN IS ED");
         testContext.getWebDriverManager().closeDriver();
     }
 }

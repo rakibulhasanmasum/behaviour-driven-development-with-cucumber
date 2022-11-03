@@ -1,17 +1,26 @@
 package playground;
 
+import com.alpine.helper.WaitExplicit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestFacebook {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "bin/chromedriver_linux");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+public class TestFacebook extends Driver {
+    WebDriver driver;
+//    public static void main(String[] args) {
+//        System.setProperty("webdriver.chrome.driver", "bin/chromedriver_linux");
+//        WebDriver driver = new ChromeDriver();
+//
+//        driver.get("https://google.com");
+//        driver.quit();
+//    }
+    public TestFacebook() {
+        driver = this.getDriver();
+    }
 
-        driver.get("https://google.com");
-        driver.quit();
+    public void userNavigatesTo(String url) {
+        driver.get(url.toString());
+        WaitExplicit.wait(2000);
     }
 }

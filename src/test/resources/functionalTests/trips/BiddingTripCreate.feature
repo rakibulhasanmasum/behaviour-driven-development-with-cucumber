@@ -1,3 +1,4 @@
+@bidding_trip_create
 Feature: Shipper Search
 #  Background: Admin user
 
@@ -46,4 +47,4 @@ Feature: Shipper Search
 
     Examples:
       | shipper id | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
-      | 374624     | hali          | mani            | 1   | 7    | open | 3          | 3    | 03:00 AM |                | - Testing Automation | cash         |
+      | 374624     | hali          | mani            | 1   | 7    | open | 3          | 3    | 03:00 AM | 500            | - Testing Automation | cash         |

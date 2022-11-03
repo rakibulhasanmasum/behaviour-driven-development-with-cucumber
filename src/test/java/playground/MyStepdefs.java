@@ -12,28 +12,34 @@ import static org.junit.Assert.*;
 import java.util.concurrent.TimeUnit;
 
 public class MyStepdefs {
-    private WebDriver driver;
+//    private WebDriver driver;
     @Given("User is on google home page")
     public void userIsOnGoogleHomePage() {
-        System.setProperty("webdriver.chrome.driver", "src/main/bin/");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-        driver.get("https://google.com");
-        assertEquals(driver.getTitle(), "Google");
+        TestFacebook testFacebook = new TestFacebook();
+        testFacebook.userNavigatesTo("https://www.google.com");
+        System.out.println("HELLO");
     }
 
     @When("User search for facebook")
     public void userSearchForFacebook() {
+        System.out.println("HELLO");
     }
 
     @And("click on the link containing facebook.com")
     public void clickOnTheLinkContainingFacebookCom() {
-        
+        System.out.println("HELLO");
+
     }
 
     @Then("User should be redirected to facebook.com")
     public void userShouldBeRedirectedToFacebookCom() {
-        driver.quit();
+        System.out.println("HELLO");
+
+    }
+
+    @Given("User is on facebook")
+    public void userIsOn() {
+        TestFacebook testFacebook = new TestFacebook();
+        testFacebook.userNavigatesTo("https://www.facebook.com");
     }
 }
