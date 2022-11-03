@@ -9,7 +9,7 @@ Feature: Shipper Search
     When Enters Shipper ID "<shipper id>"
     And Clicks Search button
     Then Shipper info card appears
-    And he checks if the shipper id "<shipper id>" is valid
+#    And he checks if the shipper id "<shipper id>" is valid
 
     When he Clicks on the proceed button
     Then a new tab will open
@@ -45,6 +45,12 @@ Feature: Shipper Search
     Then he selects "<payment type>" as payment type
     And finally clicks the PUBLISH TRIP button
 
+    @using_shipper_id
     Examples:
       | shipper id | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
       | 374624     | hali          | mani            | 1   | 7    | open | 3          | 3    | 03:00 AM | 500            | - Testing Automation | cash         |
+
+    @using_shipper_phone
+    Examples:
+      | shipper id  | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
+      | 01819616939 | hali          | mani            | 1   | 7    | open | 3          | 3    | 03:00 AM | 500            | - Testing Automation | cash         |

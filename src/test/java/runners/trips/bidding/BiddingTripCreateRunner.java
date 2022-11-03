@@ -10,11 +10,15 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         glue = {"stepDefinitions.trips"},
         features = "src/test/resources/functionalTests/trips/BiddingTripCreate.feature",
-        plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
+        plugin = {
+//                "features.support.GlobalHook",
+                "pretty",
+                "json:target/cucumber-reports/Cucumber.json",
                 "junit:target/cucumber-reports/Cucumber.xml",
                 "html:target/cucumber-reports/Cucumber.html",
                 "json:target/cucumber-report/cucumber.json"
         },
+        tags = "@using_shipper_phone",
         monochrome = true
 )
 //public class BiddingTripCreateRunner extends AbstractTestNGCucumberTests {
