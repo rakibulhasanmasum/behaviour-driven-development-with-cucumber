@@ -1,7 +1,7 @@
 package stepDefinitions.trips;
 
-import com.alpine.cucumber.TestContext;
-import com.alpine.pageObjects.trips.RequestsPage;
+import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.pageObjects.trips.RequestsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

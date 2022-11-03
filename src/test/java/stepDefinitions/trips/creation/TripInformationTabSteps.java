@@ -1,12 +1,10 @@
 package stepDefinitions.trips.creation;
 
-import com.alpine.cucumber.TestContext;
-import com.alpine.pageObjects.trips.creation.TripInformationTab;
+import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.pageObjects.trips.creation.TripInformationTab;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.time.LocalDate;
 
 public class TripInformationTabSteps {
     TestContext testContext;

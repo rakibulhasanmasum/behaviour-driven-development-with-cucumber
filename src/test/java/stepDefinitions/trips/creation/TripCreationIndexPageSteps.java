@@ -1,9 +1,8 @@
 package stepDefinitions.trips.creation;
 
-import com.alpine.cucumber.TestContext;
-import com.alpine.pageObjects.trips.creation.TripCreationIndexPage;
+import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.pageObjects.trips.creation.TripCreationIndexPage;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 
 public class TripCreationIndexPageSteps {
     TestContext testContext;

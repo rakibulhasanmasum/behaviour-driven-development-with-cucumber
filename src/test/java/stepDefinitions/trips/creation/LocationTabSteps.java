@@ -1,7 +1,7 @@
 package stepDefinitions.trips.creation;
 
-import com.alpine.cucumber.TestContext;
-import com.alpine.pageObjects.trips.creation.LocationTab;
+import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.pageObjects.trips.creation.LocationTab;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
