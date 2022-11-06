@@ -1,6 +1,7 @@
 package com.trucklagbe.managers;
 
 import org.javalite.activejdbc.Base;
+import org.javalite.activejdbc.DB;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -8,18 +9,23 @@ import java.sql.Statement;
 
 public class DatabaseManager {
     public DatabaseManager() {
-        if (!Base.hasConnection()) {
-            Base.open("com.mysql.jdbc.Driver",
-                    "jdbc:mysql://localhost:3307/trucklagbe_qa",
-                    "root", "password");
-        }
+//        System.setProperty("ACTIVE_ENV", "test");
+//        org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("configs/database.properties");
+//        new DB("default").open();
+//        if (!Base.hasConnection()) {
+//            Base.open("com.mysql.jdbc.Driver",
+//                    "jdbc:mysql://localhost:3307/trucklagbe_qa",
+//                    "root", "password");
+//        }
     }
 
     public void openDatabase() {
         if (!Base.hasConnection()) {
-            Base.open("com.mysql.jdbc.Driver",
-                    "jdbc:mysql://localhost:3307/trucklagbe_qa",
-                    "root", "password");
+//            Base.open("com.mysql.jdbc.Driver",
+//                    "jdbc:mysql://localhost:3307/trucklagbe_qa",
+//                    "root", "password");
+
+            new DB("default").open();
         }
     }
 
@@ -38,6 +44,7 @@ public class DatabaseManager {
     }
 
     public void closeDatabase() {
-        Base.close();
+//        Base.close();
+        new DB("default").close();
     }
 }

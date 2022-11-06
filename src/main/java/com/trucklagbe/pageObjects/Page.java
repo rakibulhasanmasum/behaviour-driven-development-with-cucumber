@@ -3,6 +3,8 @@ package com.trucklagbe.pageObjects;
 import com.trucklagbe.helper.WindowHandler;
 import com.trucklagbe.selenium.Wait;
 import org.apache.commons.io.FileUtils;
+import org.javalite.activejdbc.Base;
+import org.javalite.activejdbc.DB;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

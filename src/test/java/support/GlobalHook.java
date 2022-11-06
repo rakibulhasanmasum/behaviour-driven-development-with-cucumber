@@ -10,6 +10,7 @@ import io.cucumber.plugin.event.EventHandler;
 import io.cucumber.plugin.event.EventPublisher;
 import io.cucumber.plugin.event.TestRunFinished;
 import io.cucumber.plugin.event.TestRunStarted;
+import org.javalite.activejdbc.DB;
 
 public class GlobalHook implements ConcurrentEventListener {
     static TestContext testContext;
@@ -31,6 +32,8 @@ public class GlobalHook implements ConcurrentEventListener {
     };
 
     private void beforeAll() {
+        org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("configs/database.properties");
+        new DB("default").open();
         System.out.println("BEFORE ALL");
     }
 
@@ -39,6 +42,7 @@ public class GlobalHook implements ConcurrentEventListener {
     };
 
     private void afterAll() {
+        new DB("default").close();
         System.out.println("AFTER ALL");
 //        testContext = new TestContestProvider().getTestContext();
 //        System.out.println(testContext.getWebDriverManager().getDriver().toString());
