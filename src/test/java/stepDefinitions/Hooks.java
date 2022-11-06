@@ -1,12 +1,15 @@
 package stepDefinitions;
 
 import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.models.Shipper;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import org.javalite.activejdbc.DB;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 public class Hooks {
     static TestContext testContext;
@@ -19,8 +22,24 @@ public class Hooks {
     public static void beforeAll() {
         org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("configs/database.properties");
         new DB("default").open();
-//        testContext.getDatabaseManager().openDatabase();
         System.out.println("BEFORE ALL STARTED");
+
+
+//        Shipper s = Shipper.findFirst("id = ?", "1");
+//        if (s != null) {
+//            s.set("number", "01819616939").saveIt();
+//            List<Shipper> shipperList = Shipper.where("id = 1");
+//            System.out.println( shipperList.get(0).get("number") );
+//        } else {
+//        Shipper sp = new Shipper();
+//            sp.insert();
+//        sp.set("number", "01819616939");
+//        sp.set("balance", 10);
+//        sp.saveIt();
+//        List<Shipper> shipperList = Shipper.findAll();
+//        System.out.println( shipperList.get(0).get("number") );
+//            Shipper.deleteAll();
+//        }
     }
 
     @Before

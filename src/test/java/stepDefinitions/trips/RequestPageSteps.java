@@ -22,23 +22,6 @@ public class RequestPageSteps {
 
     public RequestPageSteps(TestContext context) {
         testContext = context;
-//        try {
-//            Connection connection = DriverManager.getConnection("", "", "");
-//            Statement statement = connection.createStatement();
-//
-//            statement.execute("insert into shippers values(01819616939, 100.20)");
-//        } catch (SQLException err) {}
-//        testContext.getDatabaseManager().openDatabase();
-//        testContext.getDatabaseManager().openDatabase();
-//        Statement statement = testContext.databaseManager.getStatement();
-//        statement.execute("select * from shippers");
-//        new DB("default").open();
-        Shipper s = Shipper.findFirst("id = ?", "1");
-        s.set("number", "01819616939").saveIt();
-        List<Shipper> shipperList = Shipper.where("id = 1");
-//        testContext.getDatabaseManager().closeDatabase();
-        System.out.println( shipperList.get(0).get("number") );
-//        new DB("default").close();
         requestsPage = testContext.getPageObjectManager().getRequestsPage();
     }
 
