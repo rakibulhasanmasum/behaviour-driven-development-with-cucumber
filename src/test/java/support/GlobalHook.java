@@ -1,4 +1,4 @@
-package features.support;
+package support;
 
 import com.trucklagbe.cucumber.TestContext;
 import io.cucumber.java.After;

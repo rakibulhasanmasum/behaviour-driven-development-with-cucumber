@@ -1,11 +1,18 @@
 package stepDefinitions.trips;
 
 import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.models.Shipper;
 import com.trucklagbe.pageObjects.trips.RequestsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
 
 public class RequestPageSteps {
     TestContext testContext;
@@ -13,6 +20,21 @@ public class RequestPageSteps {
 
     public RequestPageSteps(TestContext context) {
         testContext = context;
+//        try {
+//            Connection connection = DriverManager.getConnection("", "", "");
+//            Statement statement = connection.createStatement();
+//
+//            statement.execute("insert into shippers values(01819616939, 100.20)");
+//        } catch (SQLException err) {}
+//        testContext.getDatabaseManager().openDatabase();
+//        Statement statement = testContext.databaseManager.getStatement();
+//        statement.execute("select * from shippers");
+        Shipper s = Shipper.findFirst("id = ?", "1");
+        s.set("number", "01819616939").saveIt();
+        List<Shipper> shipperList = Shipper.where("id = 1");
+//        testContext.getDatabaseManager().closeDatabase();
+
+        System.out.println( shipperList.get(0).get("number") );
         requestsPage = testContext.getPageObjectManager().getRequestsPage();
     }
 

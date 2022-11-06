@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = {"stepDefinitions.trips"},
+        glue = {"stepDefinitions"},
         features = "src/test/resources/functionalTests/trips/BiddingTripCreate.feature",
         plugin = {
-//                "features.support.GlobalHook",
+//                "support.GlobalHook",
                 "pretty",
                 "json:target/cucumber-reports/Cucumber.json",
                 "junit:target/cucumber-reports/Cucumber.xml",

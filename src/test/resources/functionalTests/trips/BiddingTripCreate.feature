@@ -1,6 +1,8 @@
 @bidding_trip_create
 Feature: Shipper Search
-#  Background: Admin user
+#  Background: Admin user logs in if not already logged in
+#    Given Admin user is on login page
+#    Then he clicks the login button
 
   Scenario Outline: He searches for shipper,
     Given Admin user is on request page
@@ -48,9 +50,9 @@ Feature: Shipper Search
     @using_shipper_id
     Examples:
       | shipper id | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
-      | 374624     | hali          | mani            | 1   | 7    | open | 3          | 3    | 03:00 AM | 500            | - Testing Automation | cash         |
+      | 374624     | hali          | mani            | 1   | 7    | open | 3          | 7    | 03:00 AM | 500            | - Testing Automation | cash         |
 
     @using_shipper_phone
     Examples:
       | shipper id  | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
-      | 01819616939 | hali          | mani            | 1   | 7    | open | 3          | 3    | 03:00 AM | 500            | - Testing Automation | cash         |
+      | 01819616939 | hali          | mani            | 1   | 7    | open | 3          | 7    | 03:00 AM | 500            | - Testing Automation | cash         |
