@@ -14,4 +14,4 @@ Exploring Cucumber Framework
 
 # TODOs
 - Integrate third party report generators
-- Managing version control so we can run all the issues generated in specific version of product
+- Managing version control, so we can run all the issues generated in specific version of product

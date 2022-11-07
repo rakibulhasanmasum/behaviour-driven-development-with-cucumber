@@ -1,4 +1,4 @@
-package com.trucklagbe.pageObjects.shipper;
+package com.trucklagbe.pageObjects.shipper.details.addressBookTab;
 
 import com.trucklagbe.pageObjects.Page;
 import org.openqa.selenium.WebDriver;
@@ -6,12 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class IndexPage extends Page {
-    WebDriver driver;
+    private WebDriver driver;
 
-    private WebElement addShipperButton;
-    private WebElement createANewTripButton;
-    private WebElement searchButton;
-    private WebElement searchInputField;
+    private WebElement addNewButton;
 
     public IndexPage(WebDriver webDriver) {
         super(webDriver);
