@@ -5,14 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class IndexPage extends Page {
+public class New extends Page {
     private WebDriver driver;
 
-    private WebElement addOwnerButton;
-    private WebElement searchButton;
-    private WebElement searchOwnerInputField;
+    private WebElement nameInputField;
+    private WebElement phoneNumberInputField;
+    private WebElement ownerTypeDropDownButton;
+    private WebElement createAccountButton;
 
-    public IndexPage(WebDriver webDriver) {
+    public New(WebDriver webDriver) {
         super(webDriver);
         driver = webDriver;
         PageFactory.initElements(driver, this);
