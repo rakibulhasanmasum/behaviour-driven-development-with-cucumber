@@ -50,7 +50,7 @@ Feature: Shipper Search
     @using_shipper_id
     Examples:
       | shipper id | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
-      | 374624     | hali          | mani            | 1   | 7    | open | 3          | 11    | 03:00 AM | 500            | - Testing Automation | cash         |
+      | 374624     | hali          | mani            | 1   | 7    | open | 3          | 11   | 03:00 AM | 500            | - Testing Automation | cash         |
 
     @using_shipper_phone
     Examples:

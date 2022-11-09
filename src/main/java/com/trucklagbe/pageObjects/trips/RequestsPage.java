@@ -104,4 +104,13 @@ public class RequestsPage extends Page {
             }
         }
     }
+
+    public void clickTrucksSideBarButton() {
+        for (WebElement button : navigationSideBarButtons) {
+            if (button.getText().equalsIgnoreCase("Trucks")) {
+                button.click();
+                break;
+            }
+        }
+    }
 }

@@ -50,10 +50,8 @@ public class AddNewOwnerPage extends Page {
     }
 
     public void selectOwnerType(String givenType) {
-        System.out.println(ownerTypeDropDownButton.getAttribute("innerHTML"));
         List<WebElement> ownerTypeOptions = ownerTypeDropDownButton.findElements(By.cssSelector("option"));
         for (WebElement option : ownerTypeOptions) {
-            System.out.println(option.getText());
             if (option.getText().equalsIgnoreCase(givenType)) {
                 option.click();
                 break;

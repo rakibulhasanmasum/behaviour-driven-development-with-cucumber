@@ -15,4 +15,4 @@ Feature: Admin user adds new Owner
     
     Examples:
       | owner name          | owner phone | owner type |
-      | Mohaiminul Mohaddes | 01998877665 | owner      |
+      | Mohaiminul Mohaddes | 01998877666 | owner      |

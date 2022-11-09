@@ -80,4 +80,14 @@ public class RequestPageSteps {
     public void aNewTabWillOpenAndHeWillBeOnOwnerPageRespectively() {
         requestsPage.handOverTheDriverToNextTab();
     }
+
+    @Then("a new tab will open and he will be on truck page respectively")
+    public void aNewTabWillOpenAndHeWillBeOnTruckPageRespectively() {
+        requestsPage.handOverTheDriverToNextTab();
+    }
+
+    @When("he clicks on the truck button")
+    public void heClicksOnTheTruckButton() {
+        requestsPage.clickTrucksSideBarButton();
+    }
 }

@@ -6,6 +6,7 @@ import com.trucklagbe.pageObjects.shipper.AddNewShipperPage;
 import com.trucklagbe.pageObjects.trips.creation.LocationTab;
 import com.trucklagbe.pageObjects.trips.creation.TripCreationIndexPage;
 import com.trucklagbe.pageObjects.trips.creation.TripInformationTab;
+import com.trucklagbe.pageObjects.trucks.AddNewTruckModal;
 import org.openqa.selenium.WebDriver;
 
 import com.trucklagbe.pageObjects.trips.*;
@@ -27,6 +28,10 @@ public class PageObjectManager {
     // owner
     private com.trucklagbe.pageObjects.owner.IndexPage ownerIndexPage;
     private AddNewOwnerPage addNewOwnerPage;
+
+    // truck
+    private com.trucklagbe.pageObjects.trucks.IndexPage truckIndexPage;
+    private AddNewTruckModal addNewTruckModal;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -66,5 +71,13 @@ public class PageObjectManager {
 
     public AddNewOwnerPage getAddNewOwnerPage() {
         return (addNewOwnerPage == null) ? addNewOwnerPage = new AddNewOwnerPage(driver) : addNewOwnerPage;
+    }
+
+    public com.trucklagbe.pageObjects.trucks.IndexPage getTruckIndexPage() {
+        return (truckIndexPage == null) ? truckIndexPage = new com.trucklagbe.pageObjects.trucks.IndexPage(driver) : truckIndexPage;
+    }
+
+    public AddNewTruckModal getAddNewTruckModal() {
+        return (addNewTruckModal == null) ? addNewTruckModal = new AddNewTruckModal(driver) : addNewTruckModal;
     }
 }
