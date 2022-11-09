@@ -87,11 +87,21 @@ public class RequestsPage extends Page {
         for (WebElement button : navigationSideBarButtons) {
             if (button.getText().equalsIgnoreCase("Shipper")) {
                 button.click();
+                break;
             }
         }
     }
 
     public void handOverTheDriverToNextTab() {
         this.handOverTheWindowHandler();
+    }
+
+    public void clickOwnerSideBarButton() {
+        for (WebElement button : navigationSideBarButtons) {
+            if (button.getText().equalsIgnoreCase("Owner")) {
+                button.click();
+                break;
+            }
+        }
     }
 }

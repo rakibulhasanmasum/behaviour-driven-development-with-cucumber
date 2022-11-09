@@ -1,6 +1,7 @@
 package com.trucklagbe.managers;
 
 import com.trucklagbe.pageObjects.LoginPage;
+import com.trucklagbe.pageObjects.owner.AddNewOwnerPage;
 import com.trucklagbe.pageObjects.shipper.AddNewShipperPage;
 import com.trucklagbe.pageObjects.trips.creation.LocationTab;
 import com.trucklagbe.pageObjects.trips.creation.TripCreationIndexPage;
@@ -11,13 +12,21 @@ import com.trucklagbe.pageObjects.trips.*;
 
 public class PageObjectManager {
     protected WebDriver driver;
+
+    // trips
     private RequestsPage requestsPage;
     private LocationTab locationTab;
     private TripInformationTab tripInformationTab;
     private TripCreationIndexPage tripCreationIndexPage;
     private LoginPage loginPage;
+
+    // shipper
     private com.trucklagbe.pageObjects.shipper.IndexPage shipperIndexPage;
     private AddNewShipperPage addNewShipperPage;
+
+    // owner
+    private com.trucklagbe.pageObjects.owner.IndexPage ownerIndexPage;
+    private AddNewOwnerPage addNewOwnerPage;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -49,5 +58,13 @@ public class PageObjectManager {
 
     public AddNewShipperPage getAddNewShipperPage() {
         return (addNewShipperPage == null) ? addNewShipperPage = new AddNewShipperPage(driver) : addNewShipperPage;
+    }
+
+    public com.trucklagbe.pageObjects.owner.IndexPage getOwnerIndexPage() {
+        return  (ownerIndexPage == null) ? ownerIndexPage = new com.trucklagbe.pageObjects.owner.IndexPage(driver) : ownerIndexPage;
+    }
+
+    public AddNewOwnerPage getAddNewOwnerPage() {
+        return (addNewOwnerPage == null) ? addNewOwnerPage = new AddNewOwnerPage(driver) : addNewOwnerPage;
     }
 }

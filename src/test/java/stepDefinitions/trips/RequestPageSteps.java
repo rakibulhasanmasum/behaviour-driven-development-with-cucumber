@@ -70,4 +70,14 @@ public class RequestPageSteps {
     public void aNewTabWillOpenAndHeWillBeOnShipperPageRespectively() {
         requestsPage.handOverTheDriverToNextTab();
     }
+
+    @When("he clicks on the owner button")
+    public void heClicksOnTheOwnerButton() {
+        requestsPage.clickOwnerSideBarButton();
+    }
+
+    @Then("a new tab will open and he will be on owner page respectively")
+    public void aNewTabWillOpenAndHeWillBeOnOwnerPageRespectively() {
+        requestsPage.handOverTheDriverToNextTab();
+    }
 }
