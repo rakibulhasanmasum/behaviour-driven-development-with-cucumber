@@ -1,15 +1,13 @@
-package runners;
-
+package runners.owner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = {"stepDefinitions"},
-        features = "src/test/resources/functionalTests",
+        features = "src/test/resources/functionalTests/owner/AddNewOwner.feature",
         plugin = {
 //                "support.GlobalHook",
                 "pretty",
@@ -17,8 +15,6 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber-reports/Cucumber.xml",
                 "html:target/cucumber-reports/Cucumber.html",
         },
-        tags = "@add_new_shipper",
-//        tags = "@bidding_trip_create and @using_shipper_id",
         monochrome = true
 )
-public class Runner {}
+public class AddNewOwnerRunnerTest {}

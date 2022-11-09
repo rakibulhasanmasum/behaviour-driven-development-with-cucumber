@@ -1,20 +1,11 @@
 package stepDefinitions.trips;
 
 import com.trucklagbe.cucumber.TestContext;
-import com.trucklagbe.models.Shipper;
 import com.trucklagbe.pageObjects.trips.RequestsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.javalite.activejdbc.Base;
-import org.javalite.activejdbc.DB;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
 
 public class RequestPageSteps {
     TestContext testContext;
@@ -68,5 +59,15 @@ public class RequestPageSteps {
     @Then("a new tab will open")
     public void aNewTabWillOpen() {
         requestsPage.handOverTheWindowHandler();
+    }
+
+    @When("he clicks on the shipper button")
+    public void heClicksOnTheShipperButton() {
+        requestsPage.clickShipperSideBarButton();
+    }
+
+    @Then("a new tab will open and he will be on shipper page respectively")
+    public void aNewTabWillOpenAndHeWillBeOnShipperPageRespectively() {
+        requestsPage.handOverTheDriverToNextTab();
     }
 }

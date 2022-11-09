@@ -1,6 +1,7 @@
 package com.trucklagbe.managers;
 
 import com.trucklagbe.pageObjects.LoginPage;
+import com.trucklagbe.pageObjects.shipper.AddNewShipperPage;
 import com.trucklagbe.pageObjects.trips.creation.LocationTab;
 import com.trucklagbe.pageObjects.trips.creation.TripCreationIndexPage;
 import com.trucklagbe.pageObjects.trips.creation.TripInformationTab;
@@ -15,6 +16,8 @@ public class PageObjectManager {
     private TripInformationTab tripInformationTab;
     private TripCreationIndexPage tripCreationIndexPage;
     private LoginPage loginPage;
+    private com.trucklagbe.pageObjects.shipper.IndexPage shipperIndexPage;
+    private AddNewShipperPage addNewShipperPage;
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -38,5 +41,13 @@ public class PageObjectManager {
 
     public LoginPage getLoginPage() {
         return (loginPage == null) ? loginPage = new LoginPage(driver) : loginPage;
+    }
+
+    public com.trucklagbe.pageObjects.shipper.IndexPage getShipperIndexPage() {
+        return (shipperIndexPage == null) ? shipperIndexPage = new com.trucklagbe.pageObjects.shipper.IndexPage(driver) : shipperIndexPage;
+    }
+
+    public AddNewShipperPage getAddNewShipperPage() {
+        return (addNewShipperPage == null) ? addNewShipperPage = new AddNewShipperPage(driver) : addNewShipperPage;
     }
 }

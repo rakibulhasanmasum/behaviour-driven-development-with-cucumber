@@ -9,8 +9,6 @@ import io.cucumber.java.BeforeAll;
 import org.javalite.activejdbc.DB;
 import org.openqa.selenium.WebDriver;
 
-import java.util.List;
-
 public class Hooks {
     static TestContext testContext;
 

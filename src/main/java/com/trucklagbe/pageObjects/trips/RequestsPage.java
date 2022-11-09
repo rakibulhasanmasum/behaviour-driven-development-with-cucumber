@@ -1,5 +1,6 @@
 package com.trucklagbe.pageObjects.trips;
 
+import com.trucklagbe.helper.WaitExplicit;
 import com.trucklagbe.managers.FileReaderManager;
 import com.trucklagbe.pageObjects.Page;
 import com.trucklagbe.selenium.Wait;
@@ -9,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class RequestsPage extends Page {
     private WebDriver driver;
@@ -31,6 +34,9 @@ public class RequestsPage extends Page {
     @FindBy(id = "proceed")
     private WebElement proceedButton;
 
+    @FindBy(className= "list-group-item")
+    private List<WebElement> navigationSideBarButtons;
+
     public RequestsPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
@@ -39,7 +45,8 @@ public class RequestsPage extends Page {
     public void navigateToRequestsPage() {
         Wait.untilPageLoadComplete(driver);
         Wait.untilJqueryIsDone(driver);
-        driver.get(FileReaderManager.getInstance().getConfigReader().getRequestsUrl());
+        String requestsUrl = FileReaderManager.getInstance().getRoutesReader().getRequestsRoute();
+        driver.get(requestsUrl);
     }
 
     public void clickNewTripButton() {
@@ -74,5 +81,17 @@ public class RequestsPage extends Page {
 
     public void clickProceedButton() {
         proceedButton.click();
+    }
+
+    public void clickShipperSideBarButton() {
+        for (WebElement button : navigationSideBarButtons) {
+            if (button.getText().equalsIgnoreCase("Shipper")) {
+                button.click();
+            }
+        }
+    }
+
+    public void handOverTheDriverToNextTab() {
+        this.handOverTheWindowHandler();
     }
 }
