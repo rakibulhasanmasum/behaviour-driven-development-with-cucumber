@@ -1,7 +1,9 @@
 package stepDefinitions.trucks;
 
 import com.trucklagbe.cucumber.TestContext;
+import com.trucklagbe.helper.WaitExplicit;
 import com.trucklagbe.pageObjects.trucks.AddNewTruckModal;
+import com.trucklagbe.selenium.Wait;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
@@ -50,86 +52,104 @@ public class AddNewTruckModalSteps {
 
     @Then("he clicks on the select metro drop down button")
     public void heClicksOnTheSelectMetroDropDownButton() {
-        addNewTruckModal.selectGivenOptionFromGivenOptionType("Select Metro", " Select Metro");
+        addNewTruckModal.clickDesiredDropDownButton("Select Metro");
     }
 
     @And("he selects {string} for truck metro")
-    public void heSelectsForTruckMetro(String arg0) {
+    public void heSelectsForTruckMetro(String selectedMetro) {
+        addNewTruckModal.selectGivenOptionFromGivenOptionType("Select Metro", selectedMetro);
     }
 
     @Then("he clicks select class drop down button")
     public void heClicksSelectClassDropDownButton() {
+        addNewTruckModal.clickDesiredDropDownButton("Select Class");
     }
 
     @And("he selects {string} for truck class")
-    public void heSelectsForTruckClass(String arg0) {
+    public void heSelectsForTruckClass(String selectedClass) {
+        addNewTruckModal.selectGivenOptionFromGivenOptionType("Select Class", selectedClass);
     }
 
     @Then("he types {string} as vehicle number")
-    public void heTypesAsVehicleNumber(String arg0) {
+    public void heTypesAsVehicleNumber(String vehicleNumber) {
+        addNewTruckModal.enterVehicleNumber(vehicleNumber);
     }
 
     @Then("he clicks on the category drop down button")
     public void heClicksOnTheCategoryDropDownButton() {
+        addNewTruckModal.clickTruckCategoryButton();
     }
 
     @And("he selects {string} as ton, {string} as feet, {string} as type")
-    public void heSelectsAsTonAsFeetAsType(String arg0, String arg1, String arg2) {
+    public void heSelectsAsTonAsFeetAsType(String ton, String feet, String type) {
+        addNewTruckModal.selectGivenTonForTruckCategory(ton);
+        addNewTruckModal.selectGivenFeetForTruckCategory(feet);
+        addNewTruckModal.selectGivenTypeForTruckCategory(type);
     }
 
     @Then("he clicks apply button")
     public void heClicksApplyButton() {
+        addNewTruckModal.clickApplyButton();
     }
 
     @Then("he clicks on truck model name drop down button")
     public void heClicksOnTruckModelNameDropDownButton() {
+        addNewTruckModal.clickDesiredDropDownButton("Model Name");
     }
 
     @And("he selects {string} as truck model name")
-    public void heSelectsAsTruckModelName(String arg0) {
+    public void heSelectsAsTruckModelName(String modelName) {
+        addNewTruckModal.selectGivenOptionFromGivenOptionType("Model Name", modelName);
     }
 
     @Then("he types {string} as manufacturing month")
-    public void heTypesAsManufacturingMonth(String arg0) {
+    public void heTypesAsManufacturingMonth(String monthNumber) {
+        addNewTruckModal.enterManufacturingMonth(monthNumber);
     }
 
     @And("he types {string} as manufacturing year")
-    public void heTypesAsManufacturingYear(String arg0) {
+    public void heTypesAsManufacturingYear(String givenYear) {
+        addNewTruckModal.enterManufacturingYear(givenYear);
     }
 
-    @Then("he types {string} as truck height")
-    public void heTypesAsTruckHeight(String arg0) {
-    }
-
-    @Then("he types {string} as truck width")
-    public void heTypesAsTruckWidth(String arg0) {
-    }
-
-    @Then("he types {string} as truck length")
-    public void heTypesAsTruckLength(String arg0) {
-    }
-
-    @Then("he types {string} as truck capacity")
-    public void heTypesAsTruckCapacity(String arg0) {
-    }
+//    @Then("he types {string} as truck height")
+//    public void heTypesAsTruckHeight(String arg0) {
+//    }
+//
+//    @Then("he types {string} as truck width")
+//    public void heTypesAsTruckWidth(String arg0) {
+//    }
+//
+//    @Then("he types {string} as truck length")
+//    public void heTypesAsTruckLength(String arg0) {
+//    }
+//
+//    @Then("he types {string} as truck capacity")
+//    public void heTypesAsTruckCapacity(String arg0) {
+//    }
 
     @Then("he clicks on the hq drop down button")
     public void heClicksOnTheHqDropDownButton() {
+        addNewTruckModal.clickDesiredDropDownButton("Truck HQ");
     }
 
     @And("he select {string} as truck hq")
-    public void heSelectAsTruckHq(String arg0) {
+    public void heSelectAsTruckHq(String truckHQ) {
+        addNewTruckModal.selectGivenOptionFromGivenOptionType("Truck HQ", truckHQ);
     }
 
     @Then("he clicks on the stand drop down button")
     public void heClicksOnTheStandDropDownButton() {
+        addNewTruckModal.clickDesiredDropDownButton("Truck Stand");
     }
 
     @And("he selects {string} as truck stand")
-    public void heSelectsAsTruckStand(String arg0) {
+    public void heSelectsAsTruckStand(String truckStand) {
+        addNewTruckModal.selectGivenOptionFromGivenOptionType("Truck Stand", truckStand);
     }
 
     @And("he clicks add button")
     public void heClicksAddButton() {
+        addNewTruckModal.clickAddButton();
     }
 }

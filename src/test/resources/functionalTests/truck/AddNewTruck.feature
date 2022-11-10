@@ -33,10 +33,10 @@ Feature: Admin user adds new truck
 
     Then he types "<manufacturing month>" as manufacturing month
     And he types "<year>" as manufacturing year
-    Then he types "<height>" as truck height
-    Then he types "<width>" as truck width
-    Then he types "<length>" as truck length
-    Then he types "<capacity>" as truck capacity
+#    Then he types "<height>" as truck height
+#    Then he types "<width>" as truck width
+#    Then he types "<length>" as truck length
+#    Then he types "<capacity>" as truck capacity
 
     Then he clicks on the hq drop down button
     And he select "<hq>" as truck hq
@@ -50,10 +50,10 @@ Feature: Admin user adds new truck
 
     @by_owner_phone
     Examples:
-      | owner phone | metro       | class | vehicle number | model name                           | manufacturing month | year | height | width | length | capacity | hq       | stand       | ton | feet | type |
-      | 01819616939 | ঢাকা মেট্রো | ঠ     | 000168         | Ashok Leyland Ecomet 1012 IL 16 Feet | 06                  | 1999 | 5      | 5     | 5      | 1000     | Bagerhat | Truck Stand | 1   | 7    | open    |
+      | owner phone | metro | class | vehicle number | model name | manufacturing month | year | height | width | length | capacity | hq       | stand       | ton | feet | type |
+      | 01819616939 | rm    | tha   | 000168         | 1          | 06                  | 1999 | 5      | 5     | 5      | 1000     | BNB | Alikodom | 1   | 7    | open |
 
     @by_owner_id
     Examples:
-      | owner phone | metro       | class | vehicle number | model name                           | manufacturing month | year | height | width | length | capacity | hq       | stand       | ton | feet | type |
-      | 134         | ঢাকা মেট্রো | ঠ     | 199999         | Ashok Leyland Ecomet 1012 IL 16 Feet | 06                  | 1999 | 5      | 4     | 5      | 1000     | Bagerhat | Truck Stand | 1   | 7    | open |
+      | owner phone | metro | class | vehicle number | model name | manufacturing month | year | height | width | length | capacity | hq       | stand       | ton | feet | type |
+      | 134         | dm    | ta    | 199999         | 1          | 06                  | 1999 | 5      | 4     | 5      | 1000     | BNB | Alikodom | 1   | 7    | open |
