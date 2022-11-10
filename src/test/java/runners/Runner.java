@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber-reports/Cucumber.xml",
                 "html:target/cucumber-reports/Cucumber.html",
         },
-        tags = "@add_new_shipper",
+//        tags = "@add_new_shipper",
 //        tags = "@bidding_trip_create and @using_shipper_id",
         monochrome = true
 )

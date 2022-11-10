@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import javax.naming.NameAlreadyBoundException;
 import java.util.List;
 
 public class AddNewTruckModal extends Page {
@@ -84,6 +85,9 @@ public class AddNewTruckModal extends Page {
 
     @FindBy(xpath = "//button[text()=' Add ']")
     private WebElement addButton;
+
+    @FindBy(css = ".new-truck-form .text-danger")
+    private WebElement warningParagraph;
 
     public AddNewTruckModal(WebDriver webDriver) {
         super(webDriver);
@@ -189,6 +193,12 @@ public class AddNewTruckModal extends Page {
     public void clickAddButton() {
         addButton.click();
         Wait.untilJqueryIsDone(driver);
+
+        String warningText = warningParagraph.getText();
+        if (warningText.strip() != "") {
+            throw new NoSuchElementException(warningText);
+        }
+
         WaitExplicit.wait(10 * 1000);
     }
 }
