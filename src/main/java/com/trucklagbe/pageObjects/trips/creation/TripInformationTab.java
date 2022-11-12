@@ -175,6 +175,7 @@ public class TripInformationTab extends Page {
 
     public void clickBiddingTripTypeButton() {
         biddingTripTypeButton.click();
+        scrollToBottom();
     }
 
     public void clickDateDropDownButton() {

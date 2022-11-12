@@ -90,4 +90,9 @@ public class ConfigFileReader {
         if(testDataResourcePath!= null) return testDataResourcePath;
         else throw new RuntimeException("Test Data Resource Path not specified in the configuration.properties file for the Key:testDataResourcePath");
     }
+
+    public Boolean getHeadlessOption() {
+        Boolean headless = properties.getProperty("headless").equalsIgnoreCase( "true" );
+        return headless;
+    }
 }

@@ -23,6 +23,8 @@ public class WebDriverManager {
     private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
     private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
 
+    private Boolean headless;
+
     public WebDriverManager() {
         driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
         environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
@@ -52,6 +54,7 @@ public class WebDriverManager {
         switch (driverType) {
             case FIREFOX :
                 System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver");
+                headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
 //                ProfilesIni allProfiles = new ProfilesIni();
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
@@ -59,14 +62,17 @@ public class WebDriverManager {
                 String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
+                firefoxOptions.setHeadless(headless);
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
             case CHROME :
                 System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
+                headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
                 System.out.println(user_data_dir);
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments(user_data_dir);
+                options.setHeadless(headless);
 //                options.addArguments("--user-data-dir=/home/rakibul/Workstation/ruby-selenium-automation/user_data");
 //                options.addArguments("--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir");
 //                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});

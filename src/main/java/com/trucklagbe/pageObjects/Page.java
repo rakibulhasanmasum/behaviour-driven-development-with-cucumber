@@ -5,6 +5,7 @@ import com.trucklagbe.selenium.Wait;
 import org.apache.commons.io.FileUtils;
 import org.javalite.activejdbc.Base;
 import org.javalite.activejdbc.DB;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,5 +32,10 @@ public class Page {
         } catch (IOException e) {
             System.out.println(e);
         }
+    }
+
+    public void scrollToBottom() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
 }
