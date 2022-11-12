@@ -1,4 +1,4 @@
-package support;
+package stepDefinitions.hooks;
 
 import com.trucklagbe.cucumber.TestContext;
 import io.cucumber.java.After;
