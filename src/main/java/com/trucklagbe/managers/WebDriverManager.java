@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -18,6 +21,7 @@ public class WebDriverManager {
 
     private static OperatingSystemType operatingSystemType;
     private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
+    private static final String FIREFOX_DRIVER_PROPERTY = "webdriver.gecko.driver";
 
     public WebDriverManager() {
         driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
@@ -46,7 +50,16 @@ public class WebDriverManager {
 
     private WebDriver createLocalDriver() {
         switch (driverType) {
-            case FIREFOX : driver = new FirefoxDriver();
+            case FIREFOX :
+                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver");
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+//                ProfilesIni allProfiles = new ProfilesIni();
+//                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
+//                firefoxOptions.setProfile(firefoxProfile);
+                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+                firefoxOptions.addArguments("--profile");
+                firefoxOptions.addArguments(profileDir);
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             case CHROME :
                 System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());

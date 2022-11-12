@@ -37,3 +37,4 @@ build/
 ### Mac OS ###
 .DS_Store
 chrome_data_dir
+firefox_data_dir

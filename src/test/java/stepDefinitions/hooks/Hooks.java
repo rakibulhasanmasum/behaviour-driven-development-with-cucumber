@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.hooks;
 
 import com.trucklagbe.cucumber.TestContext;
 import com.trucklagbe.models.Shipper;

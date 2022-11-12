@@ -2,11 +2,13 @@ package runners;
 
 
 import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+//import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.CucumberOptions;
 import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 
-@RunWith(Cucumber.class)
+// @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = {"stepDefinitions"},
         features = "src/test/resources/functionalTests",
@@ -18,7 +20,7 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-reports/Cucumber.html",
         },
 //        tags = "@add_new_shipper",
-//        tags = "@bidding_trip_create and @using_shipper_id",
+        tags = "@bidding_trip_create and @using_shipper_id",
         monochrome = true
 )
-public class Runner {}
+public class Runner extends AbstractTestNGCucumberTests {}
