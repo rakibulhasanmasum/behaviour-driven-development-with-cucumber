@@ -20,7 +20,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
                 "html:target/cucumber-reports/Cucumber.html",
         },
 //        tags = "@add_new_shipper",
-        tags = "@bidding_trip_create and @using_shipper_id",
+        tags = "@bidding_trip_create and @using_shipper_phone",
         monochrome = true
 )
 public class Runner extends AbstractTestNGCucumberTests {}
