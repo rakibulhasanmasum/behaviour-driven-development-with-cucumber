@@ -77,8 +77,9 @@ public class WebDriverManager {
             case CHROME :
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
 //                String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
-                String user_data_dir = "--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir";
+//                String user_data_dir = "--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir";
 //                String profile_dir = "--profile-directory=Profile 1";
+                String user_data_dir = "--user-data-dir=/tmp/chrome_data_dir";
 
                 // Not using ChromeDriverManagerDependency
 //                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
@@ -93,7 +94,7 @@ public class WebDriverManager {
                 options.setHeadless(headless);
                 options.addArguments("enable-automation");
                 options.addArguments("--no-sandbox");
-                options.addArguments("--incognito");
+//                options.addArguments("--incognito");
                 options.addArguments("--disable-infobars");
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-browser-side-navigation");
