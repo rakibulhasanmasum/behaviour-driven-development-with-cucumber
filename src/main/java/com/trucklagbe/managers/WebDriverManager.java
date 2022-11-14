@@ -66,14 +66,25 @@ public class WebDriverManager {
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
             case CHROME :
-                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
-                System.out.println(user_data_dir);
+
+                // Not using ChromeDriverManagerDependency
+//                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
+
+                // Using ChromeDriverManagerDependency
+                io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+
+                // Chrome options
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments(user_data_dir);
                 options.setHeadless(headless);
-                options.addArguments("--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage");
+                options.addArguments("enable-automation");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-infobars");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-browser-side-navigation");
+                options.addArguments("--disable-gpu");
 //                options.addArguments("--user-data-dir=/home/rakibul/Workstation/ruby-selenium-automation/user_data");
 //                options.addArguments("--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir");
 //                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
