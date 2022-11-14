@@ -65,8 +65,8 @@ public class WebDriverManager {
 //                ProfilesIni allProfiles = new ProfilesIni();
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
 //                firefoxOptions.setProfile(firefoxProfile);
-//                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
-                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
+                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+//                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);

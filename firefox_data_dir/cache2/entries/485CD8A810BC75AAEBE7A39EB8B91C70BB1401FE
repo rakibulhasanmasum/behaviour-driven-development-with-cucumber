@@ -1,0 +1,638 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+
+## Alert Bar
+
+alert-bar-close-message = Close message
+
+## Firefox and Mozilla Brand
+##
+## Firefox and Mozilla must be treated as a brand.
+##
+## They cannot be:
+## - Transliterated.
+## - Translated.
+##
+## Declension should be avoided where possible, leaving the original
+## brand unaltered in prominent UI positions.
+##
+## For further details, consult:
+## https://mozilla-l10n.github.io/styleguides/mozilla_general/#brands-copyright-and-trademark
+
+-brand-mozilla = Mozilla
+-brand-firefox = Firefox
+-brand-google = Google
+# “Accounts” can be localized, “Firefox” must be treated as a brand.
+-product-firefox-accounts = Firefox Accounts
+# “Account” can be localized, “Firefox” must be treated as a brand.
+# This is used to refer to a user's account, e.g. "update your Firefox account ..."
+-product-firefox-account = Firefox account
+product-mozilla-vpn = Mozilla VPN
+product-pocket = Pocket
+product-firefox-monitor = Firefox Monitor
+product-firefox-relay = Firefox Relay
+
+##
+
+-google-play = Google Play
+-app-store = App Store
+
+##  Application page title and footer
+
+app-default-title = { -product-firefox-accounts }
+# This string is used as the title of the page.
+# Variables:
+#   $title (String) - the name of the current page
+#                      (for example: "Two-step authentication")
+app-page-title = { $title } | { -product-firefox-accounts }
+app-footer-mozilla-logo-label = { -brand-mozilla } logo
+app-footer-privacy-notice = Web Site Privacy Notice
+app-footer-terms-of-service = Terms of Service
+
+##
+
+
+## User's avatar
+
+avatar-your-avatar =
+    .alt = Your avatar
+avatar-default-avatar =
+    .alt = Default avatar
+
+##
+
+
+# BentoMenu component
+
+bento-menu-title = { -brand-firefox } Bento Menu
+bento-menu-firefox-title = { -brand-firefox } is tech that fights for your online privacy.
+bento-menu-vpn = { product-mozilla-vpn }
+bento-menu-monitor = { product-firefox-monitor }
+bento-menu-pocket = { product-pocket }
+bento-menu-firefox-relay = { product-firefox-relay }
+bento-menu-firefox-desktop = { -brand-firefox } Browser for Desktop
+bento-menu-firefox-mobile = { -brand-firefox } Browser for Mobile
+bento-menu-made-by-mozilla = Made by { -brand-mozilla }
+
+## Connect another device promo
+
+connect-another-fx-mobile = Get { -brand-firefox } on mobile or tablet
+connect-another-find-fx-mobile =
+    Find { -brand-firefox } in the { -google-play } and { -app-store } or
+    <br /><linkExternal>send a download link to your device.</linkExternal>
+# Alt text for Google Play and Apple App store images that will be shown if the image can't be loaded.
+# These images are used to encourage users to download Firefox on their mobile devices.
+connect-another-play-store-image =
+    .title = Download { -brand-firefox } on { -google-play }
+connect-another-app-store-image-2 =
+    .title = Download { -brand-firefox } on the { -app-store }
+
+##
+
+
+## Connected services section
+
+cs-heading = Connected Services
+cs-description = Everything you are using and signed into.
+cs-cannot-refresh =
+    Sorry, there was a problem refreshing the list of connected
+    services.
+cs-cannot-disconnect = Client not found, unable to disconnect
+# This string is used in a notification message near the top of the page.
+# Variables:
+#   $service (String) - the name of a device or service that uses Firefox Accounts
+#                       (for example: "Firefox Lockwise")
+cs-logged-out-2 = Logged out of { $service }
+cs-refresh-button =
+    .title = Refresh connected services
+# Link text to a support page on missing or duplicate devices
+cs-missing-device-help = Missing or duplicate items?
+cs-disconnect-sync-heading = Disconnect from Sync
+
+## This string is used in a modal dialog when the user starts the disconnect from
+## Sync process.
+## Variables:
+##   $device (String) - the name of a device using Firefox Accounts
+##                      (for example: "Firefox Nightly on Google Pixel 4a")
+
+cs-disconnect-sync-content-2 =
+    Your browsing data will remain on { $device },
+    but it will no longer synchronise with your account.
+cs-disconnect-sync-reason-2 = What’s the main reason for disconnecting { $device }?
+
+## The following are the options for selecting a reason for disconnecting the
+## device
+
+cs-disconnect-sync-opt-prefix = The device is:
+cs-disconnect-sync-opt-suspicious = Suspicious
+cs-disconnect-sync-opt-lost = Lost or Stolen
+cs-disconnect-sync-opt-old = Old or Replaced
+cs-disconnect-sync-opt-duplicate = Duplicate
+cs-disconnect-sync-opt-not-say = Rather not say
+
+##
+
+cs-disconnect-advice-confirm = Okay, got it
+cs-disconnect-lost-advice-heading = Lost or stolen device disconnected
+cs-disconnect-lost-advice-content-2 =
+    Since your device was lost or stolen, to
+    keep your information safe, you should change your { -product-firefox-account } password
+    in your account settings. You should also look for information from your
+    device manufacturer about erasing your data remotely.
+cs-disconnect-suspicious-advice-heading = Suspicious device disconnected
+cs-disconnect-suspicious-advice-content =
+    If the disconnected device is indeed
+    suspicious, to keep your information safe, you should change your { -product-firefox-account }
+    password in your account settings. You should also change any other
+    passwords you saved in { -brand-firefox } by typing about:logins into the address bar.
+cs-sign-out-button = Sign out
+
+##
+
+
+## Tooltip notifications for actions performed on account recovery keys or one-time use codes
+
+datablock-download =
+    .message = Downloaded
+datablock-copy =
+    .message = Copied
+datablock-print =
+    .message = Printed
+
+## Data collection section
+
+dc-heading = Data Collection and Use
+dc-subheader = Help improve { -product-firefox-accounts }
+dc-subheader-content = Allow { -product-firefox-accounts } to send technical and interaction data to { -brand-mozilla }.
+dc-opt-out-success = Opt out successful. { -product-firefox-accounts } won’t send technical or interaction data to { -brand-mozilla }.
+dc-opt-in-success = Thanks! Sharing this data helps us improve { -product-firefox-accounts }.
+dc-opt-in-out-error-2 = Sorry, there was a problem changing your data collection preference
+dc-learn-more = Learn more
+
+# DropDownAvatarMenu component
+
+drop-down-menu-title = { -product-firefox-account } menu
+# This string is used to show the current user's name or email in the settings page menu.
+# Variables:
+#   $user (String) - the user's name (or email address, if they haven't added their name to their account)
+drop-down-menu-signed-in-as = <signin>Signed in as</signin><user>{ $user }</user>
+drop-down-menu-sign-out = Sign out
+drop-down-menu-sign-out-error-2 = Sorry, there was a problem signing you out
+
+## Flow Container
+
+flow-container-back = Back
+
+# GetDataTrio component, part of Account Recovery Key flow
+
+get-data-trio-title-firefox = { -brand-firefox }
+get-data-trio-title-firefox-recovery-key = { -brand-firefox } account recovery key
+get-data-trio-title-firefox-backup-verification-codes = { -brand-firefox } backup authentication codes
+get-data-trio-download =
+    .title = Download
+get-data-trio-copy =
+    .title = Copy
+get-data-trio-print =
+    .title = Print
+
+# HeaderLockup component
+
+header-menu-open = Close menu
+header-menu-closed = Site navigation menu
+header-back-to-top-link =
+    .title = Back to top
+header-title = { -product-firefox-accounts }
+header-help = Help
+
+## Input Password
+
+input-password-hide = Hide password
+input-password-show = Show password
+input-password-hide-aria = Hide password from screen.
+input-password-show-aria = Show password as plain text. Your password will be visible on screen.
+
+## Linked Accounts section
+
+la-heading = Linked Accounts
+la-description = You have authorised access to the following accounts.
+la-unlink-button = Unlink
+la-unlink-account-button = Unlink
+la-unlink-heading = Unlink from third party account
+la-unlink-content-3 = Are you sure you want to unlink your account? Unlinking your account does not automatically sign you out of your Connected Services. To do that, you will need to manually sign out from the Connected Services section.
+nav-linked-accounts = { la-heading }
+
+## Modal
+
+modal-close-title = Close
+modal-cancel-button = Cancel
+
+## Modal Verify Session
+
+mvs-verify-your-email-2 = Confirm your email
+mvs-enter-verification-code-2 = Enter your confirmation code
+# This string is used to show a notification to the user for them to enter confirmation code to confirm their email.
+# Variables:
+#   email (String) - the user's email
+mvs-enter-verification-code-desc-2 = Please enter the confirmation code that was sent to <email>{ $email }</email> within 5 minutes.
+msv-cancel-button = Cancel
+msv-submit-button-2 = Confirm
+
+## Settings Nav
+
+nav-settings = Settings
+nav-profile = Profile
+nav-security = Security
+nav-connected-services = Connected Services
+nav-data-collection = Data Collection and Use
+nav-paid-subs = Paid Subscriptions
+nav-email-comm = Email Communications
+
+## Two Step Authentication - replace backup authentication code
+
+tfa-replace-code-error-3 = There was a problem replacing your backup authentication codes
+tfa-replace-code-success-1 =
+    New codes have been created. Save these one-time use
+    backup authentication codes in a safe place — you’ll need them to access your account if you don’t
+    have your mobile device.
+tfa-replace-code-success-alert-3 = Account backup authentication codes updated
+tfa-replace-code-1-2 = Step 1 of 2
+tfa-replace-code-2-2 = Step 2 of 2
+
+## Avatar change page
+
+avatar-page-title =
+    .title = Profile Picture
+avatar-page-add-photo = Add Photo
+avatar-page-add-photo-button =
+    .title = { avatar-page-add-photo }
+avatar-page-take-photo = Take Photo
+avatar-page-take-photo-button =
+    .title = { avatar-page-take-photo }
+avatar-page-remove-photo = Remove Photo
+avatar-page-remove-photo-button =
+    .title = { avatar-page-remove-photo }
+avatar-page-retake-photo = Retake Photo
+avatar-page-cancel-button = Cancel
+avatar-page-save-button = Save
+avatar-page-saving-button = Saving…
+avatar-page-zoom-out-button =
+    .title = Zoom Out
+avatar-page-zoom-in-button =
+    .title = Zoom In
+avatar-page-rotate-button =
+    .title = Rotate
+avatar-page-camera-error = Could not initialise camera
+avatar-page-new-avatar =
+    .alt = new profile picture
+avatar-page-file-upload-error-3 = There was a problem uploading your profile picture
+avatar-page-delete-error-3 = There was a problem deleting your profile picture
+avatar-page-image-too-large-error-2 = The image file size is too large to be uploaded
+
+##
+
+
+## Password change page
+
+pw-change-header =
+    .title = Change Password
+pw-8-chars = At least 8 characters
+pw-not-email = Not your email address
+pw-change-must-match = New password matches confirmation
+pw-commonly-used = Not a commonly used password
+# linkExternal is a link to a mozilla.org support article on password strength
+pw-tips = Stay safe — don’t reuse passwords. See more tips to <linkExternal>create strong passwords</linkExternal>.
+pw-change-cancel-button = Cancel
+pw-change-save-button = Save
+pw-change-forgot-password-link = Forgot password?
+pw-change-current-password =
+    .label = Enter current password
+pw-change-new-password =
+    .label = Enter new password
+pw-change-confirm-password =
+    .label = Confirm new password
+pw-change-success-alert-2 = Password updated
+
+##
+
+
+## Password create page
+
+pw-create-header =
+    .title = Create password
+pw-create-success-alert-2 = Password set
+pw-create-error-2 = Sorry, there was a problem setting your password
+
+##
+
+
+## Delete account page
+
+delete-account-header =
+    .title = Delete Account
+delete-account-step-1-2 = Step 1 of 2
+delete-account-step-2-2 = Step 2 of 2
+delete-account-confirm-title-2 = You’ve connected your { -product-firefox-account } to { -brand-mozilla } products that keep you secure and productive on the web:
+delete-account-acknowledge = Please acknowledge that by deleting your account:
+delete-account-chk-box-1-v2 =
+    .label = Any paid subscriptions you have will be cancelled (Except { product-pocket })
+delete-account-chk-box-2 =
+    .label = You may lose saved information and features within { -brand-mozilla } products
+delete-account-chk-box-3 =
+    .label = Reactivating with this email may not restore your saved information
+delete-account-chk-box-4 =
+    .label = Any extensions and themes that you published to addons.mozilla.org will be deleted
+delete-account-continue-button = Continue
+delete-account-password-input =
+    .label = Enter password
+delete-account-cancel-button = Cancel
+delete-account-delete-button-2 = Delete
+
+##
+
+
+## Display name page
+
+display-name-page-title =
+    .title = Display name
+display-name-input =
+    .label = Enter display name
+submit-display-name = Save
+cancel-display-name = Cancel
+display-name-update-error-2 = There was a problem updating your display name
+display-name-success-alert-2 = Display name updated
+
+##
+
+
+# Account recovery key setup page
+
+recovery-key-cancel-button = Cancel
+recovery-key-close-button = Close
+recovery-key-continue-button = Continue
+recovery-key-created-1 = Your account recovery key has been created. Be sure to save the key in a safe place that you can easily find later — you’ll need the key to regain access to your data if you forget your password.
+recovery-key-enter-password =
+    .label = Enter password
+recovery-key-page-title-1 =
+    .title = Account recovery key
+recovery-key-step-1 = Step 1 of 2
+recovery-key-step-2 = Step 2 of 2
+recovery-key-success-alert-3 = Account recovery key created
+
+## Add secondary email page
+
+add-secondary-email-step-1 = Step 1 of 2
+add-secondary-email-error-2 = There was a problem creating this email
+add-secondary-email-page-title =
+    .title = Secondary email
+add-secondary-email-enter-address =
+    .label = Enter email address
+add-secondary-email-cancel-button = Cancel
+add-secondary-email-save-button = Save
+
+## Verify secondary email page
+
+add-secondary-email-step-2 = Step 2 of 2
+verify-secondary-email-error-3 = There was a problem sending the confirmation code
+verify-secondary-email-page-title =
+    .title = Secondary email
+verify-secondary-email-verification-code-2 =
+    .label = Enter your confirmation code
+verify-secondary-email-cancel-button = Cancel
+verify-secondary-email-verify-button-2 = Confirm
+# This string is an instruction in a form.
+# Variables:
+#   $email (String) - the user's email address, which does not need translation.
+verify-secondary-email-please-enter-code-2 = Please enter the confirmation code that was sent to <strong>{ $email }</strong> within 5 minutes.
+# This string is a confirmation message shown after verifying an email.
+# Variables:
+#   $email (String) - the user's email address, which does not need translation.
+verify-secondary-email-success-alert-2 = { $email } successfully added
+
+##
+
+# Link to delete account on main Settings page
+delete-account-link = Delete Account
+
+## Two Step Authentication
+
+tfa-title = Two-Step Authentication
+tfa-step-1-3 = Step 1 of 3
+tfa-step-2-3 = Step 2 of 3
+tfa-step-3-3 = Step 3 of 3
+tfa-button-continue = Continue
+tfa-button-cancel = Cancel
+tfa-button-finish = Finish
+tfa-incorrect-totp = Incorrect two-step authentication code
+tfa-cannot-retrieve-code = There was a problem retrieving your code.
+tfa-cannot-verify-code-4 = There was a problem confirming your backup authentication code
+tfa-incorrect-recovery-code-1 = Incorrect backup authentication code
+tfa-enabled = Two-step authentication enabled
+tfa-scan-this-code =
+    Scan this QR code using one of <linkExternal>these
+    authentication apps</linkExternal>.
+# This is the image alt text for a QR code.
+# Variables:
+#   $secret (String) - a long alphanumeric string that does not require translation
+# DEV NOTE: Set image alt text per fluent/react documentation, do not use the below as an example
+tfa-qa-code-alt =
+    Use the code { $secret } to set up two-step authentication in
+    supported applications.
+tfa-qa-code =
+    .alt = { tfa-qa-code-alt }
+tfa-button-cant-scan-qr = Can’t scan code?
+# When the user cannot use a QR code.
+tfa-enter-secret-key = Enter this secret key into your authenticator app:
+tfa-enter-totp = Now enter the security code from the authentication app.
+tfa-input-enter-totp =
+    .label = Enter security code
+tfa-save-these-codes-1 =
+    Save these one-time use backup authentication codes in a safe place for when
+    you don’t have your mobile device.
+tfa-enter-code-to-confirm-1 =
+    Please enter one of your backup authentication codes now to
+    confirm you’ve saved it. You’ll need a code to login if you don’t have access to your
+    mobile device.
+tfa-enter-recovery-code-1 =
+    .label = Enter a backup authentication code
+
+##
+
+
+## Profile section
+
+profile-heading = Profile
+profile-picture =
+    .header = Picture
+profile-display-name =
+    .header = Display name
+profile-primary-email =
+    .header = Primary email
+
+##
+
+
+## Security section of Setting
+
+security-heading = Security
+security-password =
+    .header = Password
+# This is a string that shows when the user's password was created.
+# Variables:
+#   $date (String) - a localized date and time string
+security-password-created-date = Created { $date }
+security-not-set = Not Set
+security-action-create = Create
+security-set-password = Set a password to synchronise and use certain account security features.
+
+## Switch component
+
+# Used as "title" attribute when the switch is "on" and interaction turns the switch to "off"
+switch-turn-off = Turn off
+# Used as "title" attribute when the switch is "off" and interaction turns the switch to "on"
+switch-turn-on = Turn on
+# Used as "title" attribute when switch has been interacted with and form is submitting
+switch-submitting = Submitting…
+switch-is-on = on
+switch-is-off = off
+
+## Sub-section row Defaults
+
+row-defaults-action-add = Add
+row-defaults-action-change = Change
+row-defaults-action-disable = Disable
+row-defaults-status = None
+
+## Account recovery key sub-section on main Settings page
+
+rk-header-1 = Account recovery key
+rk-enabled = Enabled
+rk-not-set = Not Set
+rk-action-create = Create
+rk-action-remove = Remove
+rk-cannot-refresh-1 = Sorry, there was a problem refreshing the account recovery key.
+rk-key-removed-2 = Account recovery key removed
+rk-cannot-remove-key = Your account recovery key could not be removed.
+rk-refresh-key-1 = Refresh account recovery key
+rk-content-explain = Restore your information when you forget your password.
+rk-content-reset-data = Why does resetting my password reset my data?
+rk-cannot-verify-session-4 = Sorry, there was a problem confirming your session
+rk-remove-modal-heading-1 = Remove account recovery key?
+rk-remove-modal-content-1 =
+    In the event you reset your password, you won’t be
+    able to use your account recovery key to access your data. You can’t undo this action.
+rk-refresh-error-1 = Sorry, there was a problem refreshing the account recovery key.
+rk-remove-error-2 = Your account recovery key could not be removed
+
+## Secondary email sub-section on main Settings page
+
+se-heading = Secondary email
+    .header = Secondary Email
+se-cannot-refresh-email = Sorry, there was a problem refreshing that email.
+se-cannot-resend-code-3 = Sorry, there was a problem re-sending the confirmation code
+# This string is used in a notification message near the top of the page.
+# Variables:
+#   $email (String) - the user's email address, which does not need translation.
+se-set-primary-successful-2 = { $email } is now your primary email
+se-set-primary-error-2 = Sorry, there was a problem changing your primary email
+# This string is used in a notification message near the top of the page.
+# Variables:
+#   $email (String) - the user's email address, which does not need translation.
+se-delete-email-successful-2 = { $email } successfully deleted
+se-delete-email-error-2 = Sorry, there was a problem deleting this email
+se-verify-session-3 = You’ll need to confirm your current session to perform this action
+se-verify-session-error-3 = Sorry, there was a problem confirming your session
+# Button to remove the secondary email
+se-remove-email =
+    .title = Remove email
+# Button to refresh secondary email status
+se-refresh-email =
+    .title = Refresh email
+se-unverified-2 = unconfirmed
+se-resend-code-2 =
+    Confirmation needed. <button>Resend confirmation code</button>
+    if it’s not in your inbox or spam folder.
+# Button to make secondary email the primary
+se-make-primary = Make primary
+se-default-content = Access your account if you can’t log in to your primary email.
+se-content-note-1 =
+    Note: a secondary email won’t restore your information — you’ll
+    need an <a>account recovery key</a> for that.
+# Default value for the secondary email
+se-secondary-email-none = None
+
+##
+
+
+## Two Step Auth sub-section on Settings main page
+
+tfa-row-header = Two-step authentication
+tfa-row-disabled-2 = Two-step authentication disabled
+tfa-row-enabled = Enabled
+tfa-row-not-set = Not Set
+tfa-row-action-add = Add
+tfa-row-action-disable = Disable
+tfa-row-button-refresh =
+    .title = Refresh two-step authentication
+tfa-row-cannot-refresh =
+    Sorry, there was a problem refreshing two-step
+    authentication.
+tfa-row-content-explain =
+    Prevent someone else from logging in by requiring a
+    unique code only you have access to.
+tfa-row-cannot-verify-session-4 = Sorry, there was a problem confirming your session
+tfa-row-disable-modal-heading = Disable two-step authentication?
+tfa-row-disable-modal-confirm = Disable
+tfa-row-disable-modal-explain-1 =
+    You won’t be able to undo this action. You also
+    have the option of <linkExternal>replacing your backup authentication codes</linkExternal>.
+tfa-row-cannot-disable-2 = Two-step authentication could not be disabled
+tfa-row-change-modal-heading-1 = Change backup authentication codes?
+tfa-row-change-modal-confirm = Change
+tfa-row-change-modal-explain = You won’t be able to undo this action.
+
+## Auth-server based errors that originate from backend service
+
+auth-error-102 = Unknown account
+auth-error-103 = Incorrect password
+auth-error-105-2 = Invalid confirmation code
+auth-error-110 = Invalid token
+# This string is the amount of time required before a user can attempt another request.
+# Variables:
+#   $retryAfter (String) - Time required before retrying a request. This text is localized
+#                          by our server based on accept language in request. Our timestamp
+#                          formatting library (momentjs) will automatically add the word `in`
+#                          as part of the string.
+#                           (for example: "in 15 minutes")
+auth-error-114 = You've tried too many times. Please try again { $retryAfter }.
+auth-error-138-2 = Unconfirmed session
+auth-error-139 = Secondary email must be different than your account email
+auth-error-155 = TOTP token not found
+auth-error-183-2 = Invalid or expired confirmation code
+auth-error-1008 = Your new password must be different
++�OO�,      cq�cq�D�9cq�   j    O^partitionKey=%28https%2Cfirefox.com%29,:https://accounts.firefox.com/settings/locales/en-GB/settings.ftl strongly-framed 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Cache-Control: public, max-age=600
+Content-Type: application/octet-stream
+Date: Mon, 14 Nov 2022 07:01:03 GMT
+ETag: W/"5a68-184303c0e28"
+Last-Modified: Mon, 31 Oct 2022 22:49:13 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+Content-Length: 23144
+ original-response-headers Accept-Ranges: bytes
+Cache-Control: public, max-age=600
+Content-Type: application/octet-stream
+Date: Mon, 14 Nov 2022 07:01:03 GMT
+ETag: W/"5a68-184303c0e28"
+Last-Modified: Mon, 31 Oct 2022 22:49:13 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+Content-Length: 23144
+Connection: keep-alive
+ ctid 1 net-response-time-onstart 508 net-response-time-onstop 509   Zh
