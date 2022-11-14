@@ -18,8 +18,8 @@ public class Hooks {
 
     @BeforeAll
     public static void beforeAll() {
-        org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("configs/database.properties");
-        new DB("default").open();
+//        org.javalite.activejdbc.connection_config.DBConfiguration.loadConfiguration("configs/database.properties");
+//        new DB("default").open();
         System.out.println("BEFORE ALL STARTED");
 
 
@@ -51,7 +51,7 @@ public class Hooks {
 
     @AfterAll
     public static void before_or_after_all() {
-        new DB("default").close();
+//        new DB("default").close();
         System.out.println("F IN IS ED");
         WebDriver driver = testContext.getWebDriverManager().getDriver();
         if (!driver.toString().contains("null")) {

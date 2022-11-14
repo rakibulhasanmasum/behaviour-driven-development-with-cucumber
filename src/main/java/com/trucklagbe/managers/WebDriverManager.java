@@ -73,6 +73,7 @@ public class WebDriverManager {
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments(user_data_dir);
                 options.setHeadless(headless);
+                options.addArguments("--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage");
 //                options.addArguments("--user-data-dir=/home/rakibul/Workstation/ruby-selenium-automation/user_data");
 //                options.addArguments("--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir");
 //                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
