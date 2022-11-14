@@ -53,13 +53,20 @@ public class WebDriverManager {
     private WebDriver createLocalDriver() {
         switch (driverType) {
             case FIREFOX :
-                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver");
+                // Not Using DriverManager
+//                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver");
+
+                // Using Driver Manager
+                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
+
+                // Options
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
 //                ProfilesIni allProfiles = new ProfilesIni();
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
 //                firefoxOptions.setProfile(firefoxProfile);
-                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+//                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
