@@ -47,26 +47,26 @@
                     <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>4.17.2</version>
-                <configuration>
-                    <changeLogFile>src/main/resources/trucklagbe_qa.xml</changeLogFile>
-                    <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3307/trucklagbe_qa</url>
-                    <username>root</username>
-                    <password>password</password>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>update</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.liquibase</groupId>-->
+<!--                <artifactId>liquibase-maven-plugin</artifactId>-->
+<!--                <version>4.17.2</version>-->
+<!--                <configuration>-->
+<!--                    <changeLogFile>src/main/resources/trucklagbe_qa.xml</changeLogFile>-->
+<!--                    <driver>com.mysql.jdbc.Driver</driver>-->
+<!--                    <url>jdbc:mysql://localhost:3307/trucklagbe_qa</url>-->
+<!--                    <username>root</username>-->
+<!--                    <password>password</password>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>process-resources</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>update</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.javalite</groupId>
                 <artifactId>activejdbc-instrumentation</artifactId>
