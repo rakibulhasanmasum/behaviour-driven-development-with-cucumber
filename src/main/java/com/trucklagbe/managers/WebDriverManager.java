@@ -66,11 +66,11 @@ public class WebDriverManager {
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
 //                firefoxOptions.setProfile(firefoxProfile);
 //                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
-                String profileDir = "/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/firefox_data_dir";
+//                String profileDir = "/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/firefox_data_dir";
 //                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
 //                String profileDir = "/var/lib/jenkins/workspace/Automation Pipeline/firefox_data_dir";
-                firefoxOptions.addArguments("--profile");
-                firefoxOptions.addArguments(profileDir);
+//                firefoxOptions.addArguments("--profile");
+//                firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
