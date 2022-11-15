@@ -46,9 +46,6 @@ public class LoginPage extends Page {
         System.out.println(loginButton.findElement(By.className("title")).getAttribute("innerHTML"));
         loginButton.findElement(By.className("title")).click();
         loginButton.click();
-        loginButton.click();
-        loginButton.click();
-        loginButton.click();
         Wait.untilJqueryIsDone(driver);
         WaitExplicit.wait(3000);
     }

@@ -1,8 +1,8 @@
 @bidding_trip_create
 Feature: Shipper Search
-#  Background: Admin user logs in if not already logged in
-#    Given Admin user is on login page
-#    Then he clicks the login button
+  Background: Admin user logs in if not already logged in
+    Given Admin user is on login page
+    Then he clicks the login button
 
   Scenario Outline: He searches for shipper,
     Given Admin user is on request page
