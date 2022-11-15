@@ -15,6 +15,9 @@ import java.util.List;
 public class TripInformationTab extends Page {
     private WebDriver driver;
 
+    @FindBy(css = ".main-container")
+    private WebElement mainContainer;
+
     @FindBy(id = "trip-info-panel")
     private WebElement tripInfoPanel;
 
@@ -175,7 +178,8 @@ public class TripInformationTab extends Page {
 
     public void clickBiddingTripTypeButton() {
         biddingTripTypeButton.click();
-        scrollToBottom();
+        scrollToBottom(mainContainer);
+        WaitExplicit.wait(500);
     }
 
     public void clickDateDropDownButton() {

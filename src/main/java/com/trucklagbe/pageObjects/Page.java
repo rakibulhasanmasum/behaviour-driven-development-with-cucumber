@@ -14,9 +14,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class Page {
-    WebDriver driver;
+    private WebDriver driver;
+    private JavascriptExecutor js;
+
     public Page(WebDriver webDriver) {
         driver = webDriver;
+        js = (JavascriptExecutor) driver;
     }
 
     public void handOverTheWindowHandler() {
@@ -35,7 +38,10 @@ public class Page {
     }
 
     public void scrollToBottom() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight + 10000)");
+    }
+
+    public void scrollToBottom(WebElement element) {
+        js.executeScript("arguments[0].scrollBy(0, arguments[0].scrollHeight)", element);
     }
 }
