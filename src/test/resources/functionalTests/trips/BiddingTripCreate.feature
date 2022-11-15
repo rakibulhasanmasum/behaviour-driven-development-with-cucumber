@@ -1,14 +1,19 @@
 @bidding_trip_create
-Feature: Shipper Search
-  Background: Admin user logs in if not already logged in
+Feature: Bidding trip create with given examples
+  Background: Admin user clicks create trip button
+
+  By the time admin user tries to navigate to the /requests page, he may have been requested to login if he is not logged
+  in yet. After a successful login he will be sent to the /requests page where he finds the create trip button on the top
+  and he clicks the button in purpose.
+
     Given Admin user is on login page
     Then he clicks the login button
-
-  Scenario Outline: He searches for shipper,
-    Given Admin user is on request page
+    And Admin user is on request page
     Then Clicks New Trip Create Button
-    And Modal to Search Shipper Popups
-    When Enters Shipper ID "<shipper id>"
+
+  Scenario Outline: He searches for shipper, and fills all the necessary input fields and creates a bidding trip
+    When Modal to Search Shipper Popups
+    And He enters Shipper ID "<shipper id>"
     And Clicks Search button
     Then Shipper info card appears
 #    And he checks if the shipper id "<shipper id>" is valid

@@ -31,8 +31,8 @@ public class RequestPageSteps {
         requestsPage.checkIfShipperSearchButtonExists();
     }
 
-    @When("Enters Shipper ID {string}")
-    public void enters(String shipperId) {
+    @When("He enters Shipper ID {string}")
+    public void heEnters(String shipperId) {
         requestsPage.enterValuesInShipperSearchInputField(shipperId);
     }
 
