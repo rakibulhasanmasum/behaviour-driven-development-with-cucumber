@@ -3,15 +3,15 @@
   become: true
   become_user: shepherd
   tasks:
-    - name: Get user name
-      shell: whoami
-      register: foo
-    - debug:
-        msg: "{{ foo.stdout }}"
+#    - name: Get user name
+#      shell: whoami
+#      register: foo
+#    - debug:
+#        msg: "{{ foo.stdout }}"
 
-#    - name: copy files to nginx server
-#      copy:
-#        src: "../target/generated-report"
-#        dest: ~/qa_reports
-#        owner: shepherd
-#        group: shepherd
+    - name: copy files to nginx server
+      copy:
+        src: "../target/generated-report"
+        dest: ~/qa_reports
+        owner: shepherd
+        group: shepherd
