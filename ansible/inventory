@@ -3,4 +3,4 @@ ansible_port=5363
 ansible_connection=ssh
 
 [servers]
-Shepherd ansible_host=103.199.168.135 ansible_user=shepherd ansible_private_key_file=/home/trucklagbe_tech/tuchstone/id_rsa
+Shepherd ansible_host=103.199.168.135 ansible_user=shepherd ansible_private_key_file=/home/trucklagbe_tech/tuchstone/id_rsa #ansible_ssh_password=TlTEch

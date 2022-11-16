@@ -43,6 +43,7 @@ public class LoginPage extends Page {
         if (!checkIfUserIsCurrentlyOnLoginPage()) {
             return;
         }
+        WaitExplicit.wait(10000);
         System.out.println(loginButton.findElement(By.className("title")).getAttribute("innerHTML"));
         loginButton.findElement(By.className("title")).click();
         loginButton.click();
