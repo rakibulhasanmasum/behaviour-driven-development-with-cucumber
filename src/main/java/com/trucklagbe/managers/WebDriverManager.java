@@ -65,11 +65,12 @@ public class WebDriverManager {
 //                ProfilesIni allProfiles = new ProfilesIni();
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
 //                firefoxOptions.setProfile(firefoxProfile);
-//                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+                System.out.println(profileDir);
 //                String profileDir = "/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/firefox_data_dir";
 //                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
 //                String profileDir = "/var/lib/jenkins/workspace/Automation Pipeline/firefox_data_dir";
-                String profileDir = "/Users/r_hasan/Desktop/admin_panel_automation/firefox_data_dir";
+//                String profileDir = "/Users/r_hasan/Desktop/admin_panel_automation/firefox_data_dir";
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
@@ -77,10 +78,10 @@ public class WebDriverManager {
                 break;
             case CHROME :
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
-                String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
+//                String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
 //                String user_data_dir = "--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir";
 //                String profile_dir = "--profile-directory=Profile 1";
-//                String user_data_dir = "--user-data-dir=/tmp/chrome_data_dir";
+                String user_data_dir = "--user-data-dir=/tmp/chrome_data_dir";
 
                 // Not using ChromeDriverManagerDependency
 //                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
