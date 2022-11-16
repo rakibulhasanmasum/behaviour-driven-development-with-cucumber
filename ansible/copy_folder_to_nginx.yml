@@ -1,9 +1,15 @@
 ---
 - hosts: all
   tasks:
+#    - name: Get user name
+#      shell: whoami
+#      register: foo
+#    - debug:
+#        msg: "{{ foo.stdout }}"
+
     - name: copy files to nginx server
       copy:
         src: "target/generated-report"
         dest: /usr/share/nginx/html
-        owner: root
-        group: root
+        owner: shepherd
+        group: shepherd
