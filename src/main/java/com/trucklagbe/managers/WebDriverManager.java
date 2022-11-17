@@ -11,7 +11,10 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverManager {
@@ -77,7 +80,12 @@ public class WebDriverManager {
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
-                driver = new FirefoxDriver(firefoxOptions);
+//                driver = new FirefoxDriver(firefoxOptions);
+                try {
+                    driver = new RemoteWebDriver(new URL("https://box.trucklag.be/"), firefoxOptions);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
                 break;
             case CHROME :
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
