@@ -71,7 +71,7 @@ public class WebDriverManager {
 //                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
 //                String profileDir = "/var/lib/jenkins/workspace/Automation Pipeline/firefox_data_dir";
 //                String profileDir = "/Users/r_hasan/Desktop/admin_panel_automation/firefox_data_dir";
-                String profileDir = "/home/shepherd/jenkins/jenkins_home/custom_data/firefox_data_dir";
+                String profileDir = "~/firefox_data_dir";
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
