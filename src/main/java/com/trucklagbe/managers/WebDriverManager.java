@@ -55,9 +55,10 @@ public class WebDriverManager {
             case FIREFOX :
                 // Not Using DriverManager
 //                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver");
+                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver_linux");
 
                 // Using Driver Manager
-                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
+//                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
 
                 // Options
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
