@@ -80,12 +80,12 @@ public class WebDriverManager {
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
-//                driver = new FirefoxDriver(firefoxOptions);
-                try {
-                    driver = new RemoteWebDriver(new URL("https://box.trucklag.be/"), firefoxOptions);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+                driver = new FirefoxDriver(firefoxOptions);
+//                try {
+//                    driver = new RemoteWebDriver(new URL("https://box.trucklag.be/"), firefoxOptions);
+//                } catch (Exception e) {
+//                    System.out.println(e);
+//                }
                 break;
             case CHROME :
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
