@@ -66,7 +66,7 @@ public class WebDriverManager {
                 // Options
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.setBinary("/usr/bin/firefox");
+                firefoxOptions.setBinary("/usr/lib/firefox/firefox.sh");
 //                ProfilesIni allProfiles = new ProfilesIni();
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
 //                firefoxOptions.setProfile(firefoxProfile);
