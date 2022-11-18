@@ -1,12 +1,10 @@
 package stepDefinitions.hooks;
 
-import com.trucklagbe.cucumber.TestContext;
-import com.trucklagbe.models.Shipper;
+import com.alpine.cucumber.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
-import org.javalite.activejdbc.DB;
 import org.openqa.selenium.WebDriver;
 
 public class Hooks {

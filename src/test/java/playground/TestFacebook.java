@@ -1,6 +1,6 @@
 package playground;
 
-import com.trucklagbe.helper.WaitExplicit;
+import com.alpine.helper.WaitExplicit;
 import org.openqa.selenium.WebDriver;
 
 public class TestFacebook extends Driver {

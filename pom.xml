@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.trucklagbe</groupId>
+    <groupId>com.alpine</groupId>
     <artifactId>admin_panel_automation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -52,9 +52,9 @@
 <!--                <artifactId>liquibase-maven-plugin</artifactId>-->
 <!--                <version>4.17.2</version>-->
 <!--                <configuration>-->
-<!--                    <changeLogFile>src/main/resources/trucklagbe_qa.xml</changeLogFile>-->
+<!--                    <changeLogFile>src/main/resources/alpine_qa.xml</changeLogFile>-->
 <!--                    <driver>com.mysql.jdbc.Driver</driver>-->
-<!--                    <url>jdbc:mysql://localhost:3307/trucklagbe_qa</url>-->
+<!--                    <url>jdbc:mysql://localhost:3307/alpine_qa</url>-->
 <!--                    <username>root</username>-->
 <!--                    <password>password</password>-->
 <!--                </configuration>-->
