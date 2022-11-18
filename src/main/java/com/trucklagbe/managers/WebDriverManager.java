@@ -50,7 +50,32 @@ public class WebDriverManager {
     }
 
     private WebDriver createRemoteDriver() {
-        throw new RuntimeException("RemoteWebDriver is not yet implemented");
+        switch (driverType) {
+            case FIREFOX:
+                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
+
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+//                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
+                String profileDir = "/tmp/firefox_data_dir";
+//                String profileDir = "/home/shepherd/jenkins/jenkins_home/firefox_data_dir";
+                System.out.println(profileDir);
+                firefoxOptions.addArguments("--profile");
+                firefoxOptions.addArguments(profileDir);
+
+//                driver = new FirefoxDriver(firefoxOptions);
+                try {
+                    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxOptions);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                break;
+            default:
+                throw new RuntimeException("Not Implemented Yet");
+        }
+
+        if(FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize()) driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(), TimeUnit.SECONDS);
+        return driver;
     }
 
     private WebDriver createLocalDriver() {
@@ -66,33 +91,15 @@ public class WebDriverManager {
                 // Options
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.setBinary("/usr/bin/firefox");
-//                ProfilesIni allProfiles = new ProfilesIni();
-//                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
-//                firefoxOptions.setProfile(firefoxProfile);
-//                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
-//                System.out.println(profileDir);
-//                String profileDir = "/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/firefox_data_dir";
-//                String profileDir = "/home/rakibul/snap/firefox/common/.mozilla/firefox/";
-//                String profileDir = "/var/lib/jenkins/workspace/Automation Pipeline/firefox_data_dir";
-//                String profileDir = "/Users/r_hasan/Desktop/admin_panel_automation/firefox_data_dir";
-                String profileDir = "~/firefox_data_dir";
+                String profileDir = System.getProperty("user.dir") + "/" + "firefox_data_dir";
                 firefoxOptions.addArguments("--profile");
                 firefoxOptions.addArguments(profileDir);
                 firefoxOptions.setHeadless(headless);
                 driver = new FirefoxDriver(firefoxOptions);
-//                try {
-//                    driver = new RemoteWebDriver(new URL("https://box.trucklag.be/"), firefoxOptions);
-//                } catch (Exception e) {
-//                    System.out.println(e);
-//                }
                 break;
             case CHROME :
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
-//                String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
-//                String user_data_dir = "--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir";
-//                String profile_dir = "--profile-directory=Profile 1";
-                String user_data_dir = "--user-data-dir=/tmp/chrome_data_dir";
+                String user_data_dir = "--user-data-dir=" + System.getProperty("user.dir") + "/" + FileReaderManager.getInstance().getConfigReader().getUserDataDirForChromeOptions() + "";
 
                 // Not using ChromeDriverManagerDependency
 //                System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "chromedriver_" + operatingSystemType.toString().toLowerCase());
@@ -112,11 +119,6 @@ public class WebDriverManager {
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-browser-side-navigation");
                 options.addArguments("--disable-gpu");
-//                options.addArguments("--user-data-dir=/home/rakibul/Workstation/ruby-selenium-automation/user_data");
-//                options.addArguments("--user-data-dir=/home/rakibul/Workstation/automation/behaviour-driven-development-with-cucumber/chrome_data_dir");
-//                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-//                options.addArguments("--disable-extentions");
-//                options.addArguments("--profile-directory=Profile 1");
                 driver = new ChromeDriver(options);
                 break;
             case INTERNETEXPLORER : driver = new InternetExplorerDriver();

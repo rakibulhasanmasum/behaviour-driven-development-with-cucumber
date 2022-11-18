@@ -60,4 +60,4 @@ Feature: Bidding trip create with given examples
     @using_shipper_phone
     Examples:
       | shipper id  | load location | unload location | ton | feet | type | day limits | date | time     | shipper budget | product details      | payment type |
-      | 01819616939 | hali          | mani            | 1   | 7    | open | 3          | 16   | 03:00 AM | 500            | - Testing Automation | cash         |
+      | 01819616939 | hali          | mani            | 1   | 7    | open | 3          | 20   | 03:00 AM | 500            | - Testing Automation | cash         |
