@@ -58,15 +58,15 @@ public class WebDriverManager {
             case FIREFOX :
                 // Not Using DriverManager
 //                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver");
-                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver_linux");
+//                System.setProperty(FIREFOX_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath() + "geckodriver_linux");
 
                 // Using Driver Manager
-//                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
+                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
 
                 // Options
                 headless = FileReaderManager.getInstance().getConfigReader().getHeadlessOption();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-//                firefoxOptions.setBinary("/usr/lib/firefox/firefox.sh");
+                firefoxOptions.setBinary("/usr/bin/firefox");
 //                ProfilesIni allProfiles = new ProfilesIni();
 //                FirefoxProfile firefoxProfile = allProfiles.getProfile("default");
 //                firefoxOptions.setProfile(firefoxProfile);
